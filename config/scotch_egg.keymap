@@ -4,38 +4,15 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
-    macros {
-        to2: l2 {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 2 &kp LANG2>;
-            label = "L2";
-        };
-
-        mo2: new_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&mo 2 &kp LANG2>;
-            label = "NEW_MACRO";
-        };
-
-        esc: esc {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&lt 1 ESC &kp LANG2>;
-            label = "ESC";
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-&esc           &kp Q  &kp W         &kp E             &kp R        &kp T          &kp Y      &kp U      &kp I       &kp O     &kp P         &kp MINUS
+&lt 1 ESC      &kp Q  &kp W         &kp E             &kp R        &kp T          &kp Y      &kp U      &kp I       &kp O     &kp P         &kp MINUS
 &mt LCTRL TAB  &kp A  &kp S         &kp D             &kp F        &kp G          &kp H      &kp J      &kp K       &kp L     &kp SEMI      &kp SQT
 &kp LSHFT      &kp Z  &kp X         &kp C             &kp V        &kp B          &kp N      &kp M      &kp COMMA   &kp DOT   &kp UP_ARROW  &kp SLASH
-&mo2           &mo2   &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 LANG1  &kp BACKSPACE  &kp SPACE  &kp SPACE  &kp RETURN  &kp LEFT  &kp DOWN      &kp RIGHT
+&lt 2 LANG2    &to 2  &kp LEFT_ALT  &kp LEFT_COMMAND  &lt 1 LANG1  &kp BACKSPACE  &kp SPACE  &kp SPACE  &kp RETURN  &kp LEFT  &kp DOWN      &kp RIGHT
             >;
         };
 
